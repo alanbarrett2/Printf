@@ -6,7 +6,7 @@
 /*   By: albarret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 06:39:15 by albarret          #+#    #+#             */
-/*   Updated: 2019/06/13 17:12:45 by albarret         ###   ########.fr       */
+/*   Updated: 2019/06/13 20:53:51 by albarret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		main(void)
 	//ft_printf("This has a string%-2.4hhi");
 	//ft_printf("%+2.4hi");
 	//ft_printf("this has a string%-2.4lli");
-	ft_printf("%#3.4li");
-	return(0);
+	//ft_printf("%#3.4li");
+	ft_printf("string1%#1.1hhi\nstring2%-2.2lli\n");
+	return (0);
 }

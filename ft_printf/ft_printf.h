@@ -6,7 +6,7 @@
 /*   By: albarret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 12:31:17 by albarret          #+#    #+#             */
-/*   Updated: 2019/06/13 17:12:48 by albarret         ###   ########.fr       */
+/*   Updated: 2019/06/13 21:09:57 by albarret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 typedef	struct	s_main
 {
+	char	*char_string;
+	int	arg_number;
 	int flag_switch;
 	char	flag;
 	int	precision_switch;
@@ -36,9 +38,11 @@ typedef	struct	s_main
 	char	conversion_type;
 	int	ret;
 	int	index;
+	struct s_main	*next;
 }			t_main;
 
 int		main(void);
+t_main	*ft_create_struct_nodes(t_main *head);
 //int		ft_printf(const char *fmt, ...);
 int		ft_printf(const char *fmt);
 int		ft_main_parse(const char *fmt, int i);
@@ -51,6 +55,6 @@ void	ft_memery_width(const char *fmt, int end, int start, t_main *head);
 void	ft_conversion_parse(const char *fmt, int i, t_main *head);
 void	ft_convert_main(const char *fmt, int i, t_main *head);
 void	ft_putchar(char c);
-void	ft_length_parse(const char *fmt, int i, t_main *head);
+void	ft_length_parse(const char *fmt, int i, t_main *head);	
 
 #endif
