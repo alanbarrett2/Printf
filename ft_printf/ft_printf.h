@@ -6,7 +6,7 @@
 /*   By: albarret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 12:31:17 by albarret          #+#    #+#             */
-/*   Updated: 2019/06/13 21:09:57 by albarret         ###   ########.fr       */
+/*   Updated: 2019/06/16 22:32:36 by albarret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 typedef	struct	s_main
 {
+	int	fd;
 	char	*char_string;
 	int	arg_number;
 	int flag_switch;
@@ -38,15 +39,15 @@ typedef	struct	s_main
 	char	conversion_type;
 	int	ret;
 	int	index;
-	struct s_main	*next;
+	struct s_main	*right;
+	struct s_main	*left;
 }			t_main;
 
 int		main(void);
-t_main	*ft_create_struct_nodes(t_main *head);
+void	ft_create_struct_head(const char *fmt);
 //int		ft_printf(const char *fmt, ...);
 int		ft_printf(const char *fmt);
-int		ft_main_parse(const char *fmt, int i);
-t_main	*ft_memery_s_main(void);
+int		ft_main_parse(const char *fmt, t_main *head, int i);
 void	ft_flag_parse(const char *fmt, int i, t_main *head);
 void	ft_precision_parse(const char *fmt, int i, t_main *head);
 void	ft_width_parse(const char *fmt, int i, t_main *head);
@@ -56,5 +57,7 @@ void	ft_conversion_parse(const char *fmt, int i, t_main *head);
 void	ft_convert_main(const char *fmt, int i, t_main *head);
 void	ft_putchar(char c);
 void	ft_length_parse(const char *fmt, int i, t_main *head);	
-
+void	ft_vfprintf(const char *fmt, int i);
+void	ft_node_create(const char *fmt, int i, int arg_count, t_main *last_node);
+void	ft_char_parse(const char *fmt, t_main *head, int i);
 #endif
